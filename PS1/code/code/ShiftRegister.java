@@ -43,15 +43,16 @@ public class ShiftRegister implements ILFShiftRegister {
         boolean isValid = true;
         // Check if the each value of the seed is valid
         for(int i = 0; i < seed.length; i++) {
-            if (this.seed[i] < 0 || this.seed[i] > 1) {
+            if (seed[i] < 0 || seed[i] > 1) {
                 isValid = false;
                 break;
             }
         }
-        if (isValid) {
+        if (isValid == true) {
             this.seed = reverse(seed, 0, seed.length - 1);
             this.shiftRegisterState = this.seed;
         }
+        return;
     }
 
     private int[] reverse(int[] arr, int start, int end) {
